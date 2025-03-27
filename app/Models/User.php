@@ -31,7 +31,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'role', // ✅ Ajout du champ rôle
         'status', // ✅ Ajout du champ status
     ];
-
+    public function globalGamification()
+    {
+        return $this->hasOne(UserGlobalGamification::class);
+    }
+    public function quizGamifications()
+    {
+        return $this->hasMany(UserGamification::class);
+    }
     /**
      * Les attributs cachés pour la sérialisation.
      *

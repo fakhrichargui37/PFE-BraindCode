@@ -20,6 +20,7 @@ const form = useForm({
             </h2>
         </template>
         <div class="py-12">
+<<<<<<< HEAD
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
@@ -27,6 +28,12 @@ const form = useForm({
                             <h1 class="text-2xl font-semibold">Welcome back, {{ form.first_name }}!</h1>
                         </div>
                     </div>
+=======
+            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <!-- E-learning Page -->
+                <div class="mt-6">
+                    
+>>>>>>> a81829e (nfadelkouch ya fakhrouch)
                 </div>
             </div>
         </div>

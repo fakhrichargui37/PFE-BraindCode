@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DocumentController;
+<<<<<<< HEAD
 use App\Models\Category;
 use App\Models\Formation;
 use Illuminate\Http\Request;
@@ -17,6 +18,13 @@ use App\Http\Controllers\CategoryController;
 
 
 // Route pour afficher la page d'accueil
+=======
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ReponseController;
+use App\Http\Controllers\GamificationController;
+>>>>>>> a81829e (nfadelkouch ya fakhrouch)
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -223,3 +231,33 @@ Route::get('/formations', function (Request $request) {
 });
 
 
+<<<<<<< HEAD
+=======
+// Afficher le formulaire de modification d'une formateurs
+Route::get('/formateurs', [AdminController::class, 'Listeformateur'])->name('formateur.list');
+Route::delete('/formateurs/{id}', [AdminController::class, 'deleteFormateur'])->name('formateur.delete');
+
+// Creer un quizz
+//************************************************************** */
+Route::post('/quizzes/store', [QuizController::class, 'store']);
+Route::get('/quizzes/lecon/{lecon_id}', [QuizController::class, 'getByLecon']);
+
+/****************************************************************** */
+
+// Creer une Question
+//************************************************************** */
+Route::post('/questions', [QuestionController::class, 'store']);
+/****************************************************************** */
+// Creer des Reponses
+//************************************************************** */
+Route::post('/reponses', [ReponseController::class, 'storeMultiple']);
+//Route::post('/reponses', [ReponseController::class, 'showResponses']);
+/****************************************************************** */
+// Afficher le formulaire de création d'un quizz
+Route::get('/quizManager', function () {
+    return Inertia::render('QuizManager');
+})->name('quizManager');
+//************************************************************************************************* */
+//Partie Gamification
+Route::post('/gamification/submit', [GamificationController::class, 'store'])->name('gamification.store');
+>>>>>>> a81829e (nfadelkouch ya fakhrouch)

@@ -6,19 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lecon_id');
-            $table->string('titre');
-            $table->json('questions');
-            $table->json('reponses');
-            $table->integer('noteFinale');
-            $table->integer('dureeMaximale');
+            $table->unsignedBigInteger('lecon_id')->nullable();
+            $table->string('titre')->nullable();
+            $table->integer('noteFinale')->nullable();
+            $table->integer('dureeMaximale')->nullable();
             $table->timestamps();
 
             $table->foreign('lecon_id')->references('id')->on('lecons')->onDelete('cascade');

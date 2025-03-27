@@ -25,4 +25,8 @@ class Lecon extends Model
     {
         return $this->hasMany(Document::class);
     }
+    public function quiz()
+{
+    return $this->hasOne(Quiz::class);
+}
 }

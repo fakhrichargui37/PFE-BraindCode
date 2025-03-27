@@ -47,12 +47,12 @@ class DocumentController extends Controller
     
     
 
-    
+ /*   
 public function showFiles()
 {
     $data = Document::all(); // Retrieve all documents from the database
     return view('documents.list', compact('data')); // Pass the data to the view
-}
+}*/
 
 
    

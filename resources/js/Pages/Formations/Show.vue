@@ -1,54 +1,5 @@
 <template>
   <AuthenticatedLayout>
-<<<<<<< HEAD
-    <template #header>
-            <h2
-                class="text-xl font-semibold leading-tight text-black dark:text-gray-200"
-            >
-            📘 {{ formation?.titre || 'Chargement...' }}
-            </h2>
-        </template>
-    <div class="container mx-auto p-6">
-      <!-- Informations de la formation -->
-      <div class="bg-gray-100 p-6 rounded-lg shadow-lg mb-6">
-        <p><strong>💰 Prix :</strong> {{ formation?.prix }} €</p>
-        <p><strong>🎓 Certification :</strong> {{ formation?.estcertifiante ? 'Oui' : 'Non' }}</p>
-        <p><strong>🏷️ Catégorie :</strong> {{ formation?.category?.name || 'Non spécifiée' }}</p>
-      </div>
-
-      <!-- Image -->
-      <div v-if="formation?.image_formation" class="text-center mb-6">
-        <img :src="`/storage/${formation.image_formation}`" alt="Image de la formation" 
-             class="w-64 h-64 object-cover mx-auto rounded-lg shadow-lg">
-      </div>
-
-      <!-- Modules -->
-      <h2 class="text-2xl font-semibold text-gray-700 mt-8">📚 Modules</h2>
-      <ul v-if="formation?.modules?.length">
-        <li v-for="module in formation.modules" :key="module.id" class="mt-4 p-4 bg-gray-100 rounded-lg">
-          <h3 class="text-lg font-bold text-blue-600">📖 {{ module.titre }}</h3>
-          <p v-if="module.description" class="text-gray-600">{{ module.description }}</p>
-          <p><strong>🔢 Ordre :</strong> {{ module.ordre }}</p>
-          <p><strong>⏳ Durée estimée :</strong> {{ module.duree_estimee }} heures</p>
-
-          <!-- Leçons -->
-          <h4 class="text-md font-semibold text-gray-700 mt-4">📜 Leçons</h4>
-          <ul v-if="module.lecons?.length" class="mt-2 pl-4 list-disc">
-            <li v-for="lecon in module.lecons" :key="lecon.id">
-              <strong class="text-lg">📌 {{ lecon.titre }}</strong> 
-              <p class="text-gray-700">{{ lecon.contenu }}</p>
-
-              <!-- Vidéos -->
-              <div v-if="lecon.videos?.length" class="mt-4">
-                <h4 class="text-md font-semibold text-blue-500">🎥 Vidéos :</h4>
-                <ul class="mt-2 pl-4">
-                  <li v-for="video in lecon.videos" :key="video.id">
-                    <a :href="`/storage/videos/${video.file}`" target="_blank" class="text-blue-600 hover:underline">
-                      {{ video.titre || 'Vidéo' }}
-                    </a>
-                  </li>
-                </ul>
-=======
     <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-10">
       <div class="container mx-auto p-6 max-w-5xl">
         <!-- En-tête de formation -->
@@ -155,21 +106,9 @@
                     </video>
                   </div>
                 </div>
->>>>>>> a81829e (nfadelkouch ya fakhrouch)
               </div>
               
               <!-- Documents -->
-<<<<<<< HEAD
-              <div v-if="lecon.documents?.length" class="mt-4">
-                <h4 class="text-md font-semibold text-green-500">📄 Documents :</h4>
-                <ul class="mt-2 pl-4">
-                  <li v-for="document in lecon.documents" :key="document.id">
-                    <a :href="`/storage/documents/${document.file}`" target="_blank" class="text-green-600 hover:underline">
-                      {{ document.titre || 'Document' }}
-                    </a>
-                  </li>
-                </ul>
-=======
               <div v-if="currentLecon?.documents?.length" class="mb-8">
                 <h4 class="flex items-center text-lg font-bold text-gray-800 mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -189,7 +128,6 @@
                     </div>
                   </div>
                 </div>
->>>>>>> a81829e (nfadelkouch ya fakhrouch)
               </div>
               
               <!-- Quiz Section -->
@@ -459,11 +397,6 @@ interface Formation {
   estcertifiante: boolean;
   image_formation: string | null;
   modules?: Module[];
-  category?: Category;
-}
-interface Category {
-  id: number;
-  name: string;
 }
 // Définition du type pour les propriétés de page
 interface User {
